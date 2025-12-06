@@ -14,12 +14,12 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
-      <div className="px-6 md:px-12 lg:px-20 py-6 flex items-center justify-between">
+    <header className="relative z-50 bg-foreground">
+      <div className="px-6 md:px-12 lg:px-20 py-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#accueil" className="flex flex-col">
-          <span className="text-foreground text-sm font-light tracking-wide">build&run</span>
-          <span className="text-muted-foreground text-xs mono">business architecture</span>
+          <span className="text-background text-sm font-light tracking-wide">build&run</span>
+          <span className="text-background/60 text-xs mono">business architecture</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -28,7 +28,7 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-muted-foreground hover:text-foreground transition-colors text-sm font-light link-underline"
+              className="text-background/60 hover:text-background transition-colors text-sm font-light"
             >
               {link.label}
             </a>
@@ -37,7 +37,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-background"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -52,14 +52,14 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-t border-border"
+            className="md:hidden bg-foreground border-t border-background/20"
           >
             <nav className="flex flex-col p-6 gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-foreground font-light text-lg"
+                  className="text-background font-light text-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}

@@ -9,9 +9,8 @@ import FrameLayout from "@/components/FrameLayout";
 
 const Index = () => {
   return (
-    <FrameLayout>
+    <FrameLayout header={<Header />}>
       <main className="min-h-screen">
-        <Header />
         <Hero />
         <Services />
         <Methodology />
