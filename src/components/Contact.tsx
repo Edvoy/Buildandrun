@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowUpRight, Send, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -18,79 +18,68 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast.success("Message envoyé avec succès !", {
-      description: "Je vous répondrai dans les plus brefs délais.",
+
+    toast.success("message envoyé avec succès", {
+      description: "je vous répondrai dans les plus brefs délais.",
     });
-    
+
     setFormData({ name: "", email: "", company: "", message: "" });
     setIsSubmitting(false);
   };
 
   return (
-    <section id="contact" className="section-padding bg-navy relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-gold blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-gold blur-3xl" />
-      </div>
-
-      <div className="container-wide relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section id="contact" className="section-padding border-t border-border" ref={ref}>
+      <div className="container-wide">
+        <div className="grid lg:grid-cols-2 gap-20">
           {/* Left Content */}
           <motion.div
-            ref={ref}
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
           >
-            <p className="text-gold font-medium mb-3">Contact</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-              Prêt à Transformer
+            <span className="mono text-xs text-muted-foreground tracking-wider">contact</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-foreground mt-4 mb-8">
+              prêt à transformer
               <br />
-              <span className="text-gradient">Votre Organisation ?</span>
+              <span className="text-muted-foreground">votre organisation ?</span>
             </h2>
 
-            <p className="text-primary-foreground/70 text-lg mb-8">
-              Commencez par un diagnostic d'architecture pour identifier ce qui bloque vraiment votre business et définir les priorités des 90 prochains jours.
+            <p className="text-muted-foreground font-light leading-relaxed mb-12 max-w-md">
+              commencez par un diagnostic d'architecture pour identifier ce qui bloque vraiment votre business et définir les priorités des 90 prochains jours.
             </p>
 
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 text-primary-foreground/80">
-                <Check className="w-5 h-5 text-gold" />
-                <span>Entretien initial gratuit de 30 minutes</span>
+            <div className="space-y-4 mono text-xs text-muted-foreground">
+              <div className="flex items-center gap-4">
+                <span className="w-1 h-1 bg-foreground" />
+                <span>entretien initial gratuit de 30 minutes</span>
               </div>
-              <div className="flex items-center gap-3 text-primary-foreground/80">
-                <Check className="w-5 h-5 text-gold" />
-                <span>Approche structurée et méthodique</span>
+              <div className="flex items-center gap-4">
+                <span className="w-1 h-1 bg-foreground" />
+                <span>approche structurée et méthodique</span>
               </div>
-              <div className="flex items-center gap-3 text-primary-foreground/80">
-                <Check className="w-5 h-5 text-gold" />
-                <span>Résultats mesurables sous 90 jours</span>
+              <div className="flex items-center gap-4">
+                <span className="w-1 h-1 bg-foreground" />
+                <span>résultats mesurables sous 90 jours</span>
               </div>
             </div>
           </motion.div>
 
           {/* Right - Form */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form
-              onSubmit={handleSubmit}
-              className="card-elevated p-8 space-y-6"
-            >
-              <div className="grid sm:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-foreground mb-2"
+                    className="block mono text-xs text-muted-foreground mb-3"
                   >
-                    Nom complet
+                    nom
                   </label>
                   <input
                     type="text"
@@ -100,16 +89,16 @@ const Contact = () => {
                       setFormData({ ...formData, name: e.target.value })
                     }
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors"
-                    placeholder="Votre nom"
+                    className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground focus:border-foreground outline-none transition-colors font-light"
+                    placeholder="votre nom"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-foreground mb-2"
+                    className="block mono text-xs text-muted-foreground mb-3"
                   >
-                    Email
+                    email
                   </label>
                   <input
                     type="email"
@@ -119,7 +108,7 @@ const Contact = () => {
                       setFormData({ ...formData, email: e.target.value })
                     }
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors"
+                    className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground focus:border-foreground outline-none transition-colors font-light"
                     placeholder="vous@entreprise.com"
                   />
                 </div>
@@ -128,9 +117,9 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="company"
-                  className="block text-sm font-medium text-foreground mb-2"
+                  className="block mono text-xs text-muted-foreground mb-3"
                 >
-                  Entreprise
+                  entreprise
                 </label>
                 <input
                   type="text"
@@ -139,17 +128,17 @@ const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, company: e.target.value })
                   }
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors"
-                  placeholder="Nom de votre entreprise"
+                  className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground focus:border-foreground outline-none transition-colors font-light"
+                  placeholder="nom de votre entreprise"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-foreground mb-2"
+                  className="block mono text-xs text-muted-foreground mb-3"
                 >
-                  Votre besoin
+                  votre besoin
                 </label>
                 <textarea
                   id="message"
@@ -159,22 +148,22 @@ const Contact = () => {
                   }
                   required
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-colors resize-none"
-                  placeholder="Décrivez brièvement votre situation et vos enjeux..."
+                  className="w-full px-0 py-3 bg-transparent border-0 border-b border-border text-foreground focus:border-foreground outline-none transition-colors resize-none font-light"
+                  placeholder="décrivez brièvement votre situation et vos enjeux..."
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="btn-primary mt-8 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
-                  "Envoi en cours..."
+                  "envoi en cours..."
                 ) : (
                   <>
-                    Envoyer ma demande
-                    <Send className="w-4 h-4" />
+                    envoyer ma demande
+                    <ArrowRight className="w-4 h-4" />
                   </>
                 )}
               </button>

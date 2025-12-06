@@ -1,92 +1,82 @@
-import logo from "@/assets/logo-build-run.png";
-import { Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="container-wide section-padding !py-12">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
-          <div>
-            <a href="#accueil" className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Build&Run" className="h-10 w-auto" />
-              <span className="font-bold text-lg text-foreground">Build&Run</span>
-            </a>
-            <p className="text-muted-foreground mb-4">
-              Business Architecture pour entreprises ambitieuses.
-            </p>
-            <div className="flex gap-3">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-gold hover:text-navy transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
+    <footer className="border-t border-border">
+      <div className="px-6 md:px-12 lg:px-20 py-16">
+        <div className="container-wide">
+          <div className="grid md:grid-cols-4 gap-12 mb-20">
+            {/* Brand */}
+            <div className="md:col-span-2">
+              <a href="#accueil" className="inline-block mb-6">
+                <span className="text-foreground text-lg font-light">build&run</span>
               </a>
-              <a
-                href="mailto:contact@buildandrun.com"
-                className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-gold hover:text-navy transition-colors"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
+              <p className="text-muted-foreground font-light max-w-sm leading-relaxed">
+                business architecture pour entreprises ambitieuses. transformer le chaos en clarté opérationnelle.
+              </p>
             </div>
-          </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-bold text-foreground mb-4">Navigation</h4>
-            <ul className="space-y-2">
-              {[
-                { href: "#accueil", label: "Accueil" },
-                { href: "#offres", label: "Offres" },
-                { href: "#methode", label: "Méthode" },
-                { href: "#apropos", label: "À propos" },
-                { href: "#contact", label: "Contact" },
-              ].map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground hover:text-gold transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Navigation */}
+            <div>
+              <span className="mono text-xs text-muted-foreground tracking-wider block mb-6">navigation</span>
+              <ul className="space-y-3">
+                {[
+                  { href: "#accueil", label: "accueil" },
+                  { href: "#offres", label: "offres" },
+                  { href: "#methode", label: "méthode" },
+                  { href: "#apropos", label: "à propos" },
+                  { href: "#contact", label: "contact" },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="text-muted-foreground hover:text-foreground transition-colors font-light link-underline"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="font-bold text-foreground mb-4">Offres</h4>
-            <ul className="space-y-2">
-              {[
-                "Diagnostic d'Architecture",
-                "Blueprint & Playbook",
-                "Fractional Business Architect",
-              ].map((service) => (
-                <li key={service}>
+            {/* Contact */}
+            <div>
+              <span className="mono text-xs text-muted-foreground tracking-wider block mb-6">contact</span>
+              <ul className="space-y-3">
+                <li>
                   <a
-                    href="#offres"
-                    className="text-muted-foreground hover:text-gold transition-colors flex items-center gap-1 group"
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors font-light flex items-center gap-1 group"
                   >
-                    {service}
+                    linkedin
                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </li>
-              ))}
-            </ul>
+                <li>
+                  <a
+                    href="mailto:contact@buildandrun.com"
+                    className="text-muted-foreground hover:text-foreground transition-colors font-light"
+                  >
+                    contact@buildandrun.com
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        {/* Bottom */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Edouard Voyer • Build&Run. Tous droits réservés.
-          </p>
-          <p className="text-muted-foreground text-sm">
-            Business Architect
-          </p>
+          {/* Bottom */}
+          <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <p className="mono text-xs text-muted-foreground">
+              © {currentYear} edouard voyer — build&run
+            </p>
+            <p className="mono text-xs text-muted-foreground">
+              business architect
+            </p>
+          </div>
         </div>
       </div>
     </footer>
