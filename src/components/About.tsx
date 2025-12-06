@@ -1,94 +1,88 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Linkedin, Mail, Calendar } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const perimeter = [
-    { from: "Vision stratégique", to: "Capacités nécessaires" },
-    { from: "Capabilities", to: "Processus" },
-    { from: "Processus", to: "Flux opérationnels" },
-    { from: "Flux", to: "Outils / Données" },
-    { from: "Données", to: "Tableaux de bord" },
-    { from: "Rôles", to: "Décisions" },
-    { from: "Décisions", to: "Performance" },
+    { from: "vision stratégique", to: "capacités nécessaires" },
+    { from: "capabilities", to: "processus" },
+    { from: "processus", to: "flux opérationnels" },
+    { from: "flux", to: "outils / données" },
+    { from: "données", to: "tableaux de bord" },
+    { from: "rôles", to: "décisions" },
+    { from: "décisions", to: "performance" },
   ];
 
   return (
-    <section id="apropos" className="section-padding bg-muted">
-      <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+    <section id="apropos" className="section-padding border-t border-border">
+      <div className="container-wide" ref={ref}>
+        <div className="grid lg:grid-cols-2 gap-20">
           {/* Left - About */}
           <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
-            <p className="text-gold font-medium mb-3">À Propos</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Edouard Voyer
+            <span className="mono text-xs text-muted-foreground tracking-wider">à propos</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-foreground mt-4 mb-8">
+              edouard voyer
               <br />
-              <span className="text-gradient">Business Architect</span>
+              <span className="text-muted-foreground">business architect</span>
             </h2>
 
-            <div className="prose prose-lg text-muted-foreground mb-8">
-              <p>
-                Si l'entreprise est une machine, je dessine la machine, les flux, les interfaces, les règles, les leviers, puis je garantis que tout fonctionne ensemble.
+            <div className="space-y-6 mb-12">
+              <p className="text-muted-foreground font-light leading-relaxed">
+                si l'entreprise est une machine, je dessine la machine, les flux, les interfaces, les règles, les leviers, puis je garantis que tout fonctionne ensemble.
               </p>
-              <p>
-                Mon rôle n'est pas cosmétique. Il est structurel. Je navigue sur toute la chaîne, du haut au bas, mais je ne fais pas le travail des équipes. Je conçois et je cadre.
+              <p className="text-muted-foreground font-light leading-relaxed">
+                mon rôle n'est pas cosmétique. il est structurel. je navigue sur toute la chaîne, du haut au bas, mais je ne fais pas le travail des équipes. je conçois et je cadre.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex gap-6">
               <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-background border border-border hover:border-gold transition-colors"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
               >
-                <Linkedin className="w-5 h-5 text-gold" />
-                <span className="font-medium">LinkedIn</span>
+                <span className="text-sm">linkedin</span>
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a
                 href="mailto:contact@buildandrun.com"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-background border border-border hover:border-gold transition-colors"
+                className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
               >
-                <Mail className="w-5 h-5 text-gold" />
-                <span className="font-medium">Email</span>
+                <span className="text-sm">email</span>
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </div>
           </motion.div>
 
           {/* Right - Perimeter */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="card-elevated p-8"
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-xl font-bold text-foreground mb-6">
-              Mon Périmètre d'Action
-            </h3>
+            <span className="mono text-xs text-muted-foreground tracking-wider">périmètre d'action</span>
 
-            <div className="space-y-3">
+            <div className="mt-8 border-t border-border">
               {perimeter.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.4, delay: 0.3 + index * 0.08 }}
-                  className="flex items-center gap-3 p-3 rounded-xl bg-muted/50 hover:bg-muted transition-colors group"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
+                  className="py-4 border-b border-border flex items-center gap-4 group hover:bg-secondary/50 transition-colors -mx-4 px-4"
                 >
-                  <span className="font-medium text-foreground group-hover:text-gold transition-colors">
-                    {item.from}
-                  </span>
-                  <span className="flex-grow border-t border-dashed border-border" />
-                  <span className="text-muted-foreground">{item.to}</span>
+                  <span className="text-foreground font-light flex-1">{item.from}</span>
+                  <span className="flex-grow border-t border-dashed border-border max-w-[100px]" />
+                  <span className="text-muted-foreground font-light flex-1 text-right">{item.to}</span>
                 </motion.div>
               ))}
             </div>

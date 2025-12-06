@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,91 +6,81 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 30% 15%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 30% 15%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 15%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 220 60% 20%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 45 80% 55%;
-    --secondary-foreground: 220 30% 15%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 20% 96%;
-    --muted-foreground: 220 15% 50%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 45 80% 55%;
-    --accent-foreground: 220 30% 15%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 90%;
-    --input: 220 20% 90%;
-    --ring: 220 60% 20%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
 
-    --radius: 0.75rem;
+    --radius: 0;
 
     /* Custom colors */
-    --navy: 220 60% 15%;
-    --navy-light: 220 50% 25%;
-    --gold: 45 80% 55%;
-    --gold-light: 45 70% 70%;
-    --slate: 220 15% 40%;
+    --navy: 0 0% 0%;
+    --navy-light: 0 0% 10%;
+    --gold: 0 0% 100%;
+    --gold-light: 0 0% 80%;
+    --slate: 0 0% 50%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 60% 12%) 0%, hsl(220 50% 20%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 20% 98%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 80% 55%) 0%, hsl(40 70% 45%) 100%);
-
-    /* Shadows */
-    --shadow-card: 0 4px 20px -4px hsl(220 60% 15% / 0.1);
-    --shadow-card-hover: 0 12px 40px -8px hsl(220 60% 15% / 0.15);
-    --shadow-gold: 0 4px 20px -4px hsl(45 80% 55% / 0.4);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 100%;
   }
 
   .dark {
-    --background: 220 60% 8%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
 
-    --card: 220 50% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 220 50% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 45 80% 55%;
-    --primary-foreground: 220 60% 15%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 220 40% 20%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 40% 15%;
-    --muted-foreground: 220 15% 60%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 220 40% 20%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 40% 18%;
-    --input: 220 40% 18%;
-    --ring: 45 80% 55%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
   }
 }
 
@@ -104,55 +94,60 @@
   }
 
   body {
-    @apply bg-background text-foreground font-outfit antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-outfit font-bold tracking-tight;
+    font-family: 'Space Grotesk', sans-serif;
+    @apply font-light tracking-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
   }
 }
 
 @layer components {
   .section-padding {
-    @apply px-6 md:px-12 lg:px-20 py-16 md:py-24;
+    @apply px-6 md:px-12 lg:px-20 py-20 md:py-32;
   }
 
   .container-wide {
     @apply max-w-7xl mx-auto;
   }
 
+  .mono {
+    font-family: 'Space Mono', monospace;
+  }
+
   .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-gold);
+    @apply text-foreground;
   }
 
-  .card-elevated {
-    background: var(--gradient-card);
-    box-shadow: var(--shadow-card);
-    @apply rounded-2xl transition-all duration-300;
+  .link-underline {
+    @apply relative inline-block;
   }
 
-  .card-elevated:hover {
-    box-shadow: var(--shadow-card-hover);
-    @apply -translate-y-1;
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-foreground transition-all duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
   }
 
   .btn-primary {
-    background: var(--gradient-gold);
-    box-shadow: var(--shadow-gold);
-    @apply text-navy font-semibold px-6 py-3 rounded-full transition-all duration-300;
-  }
-
-  .btn-primary:hover {
-    @apply scale-105;
+    @apply inline-flex items-center gap-2 border border-foreground text-foreground px-6 py-3 font-medium transition-all duration-300 hover:bg-foreground hover:text-background;
   }
 
   .btn-outline {
-    @apply border-2 border-gold-light text-gold-light px-6 py-3 rounded-full transition-all duration-300 hover:bg-gold hover:text-navy font-semibold;
+    @apply inline-flex items-center gap-2 border border-foreground/30 text-foreground px-6 py-3 font-medium transition-all duration-300 hover:border-foreground;
   }
 
-  .btn-outline-dark {
-    @apply border-2 border-gold text-gold-light px-6 py-3 rounded-full transition-all duration-300 hover:bg-gold hover:text-navy font-semibold shadow-[0_0_15px_rgba(212,175,55,0.2)];
+  .card-elevated {
+    @apply border border-border bg-background;
   }
 }
 
