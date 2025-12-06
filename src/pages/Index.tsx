@@ -5,18 +5,21 @@ import Methodology from "@/components/Methodology";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import FrameLayout from "@/components/FrameLayout";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
-      <Header />
-      <Hero />
-      <Services />
-      <Methodology />
-      <About />
-      <Contact />
-      <Footer />
-    </main>
+    <FrameLayout>
+      <main className="min-h-screen">
+        <Header />
+        <Hero />
+        <Services />
+        <Methodology />
+        <About />
+        <Contact />
+        <Footer />
+      </main>
+    </FrameLayout>
   );
 };
 
