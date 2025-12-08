@@ -50,7 +50,7 @@ const Contact = () => {
               commencez par un diagnostic d'architecture pour identifier ce qui bloque vraiment votre business et définir les priorités des 90 prochains jours.
             </p>
 
-            <div className="space-y-4 mono text-xs text-muted-foreground">
+            <div className="space-y-4 mono text-xs text-foreground">
               <div className="flex items-center gap-4">
                 <span className="w-1 h-1 bg-foreground" />
                 <span>entretien initial gratuit de 30 minutes</span>
