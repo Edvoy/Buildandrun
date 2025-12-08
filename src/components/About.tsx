@@ -35,7 +35,7 @@ const About = () => {
             </h2>
 
             <div className="space-y-6 mb-12">
-              <p className="text-muted-foreground font-light leading-relaxed">
+              <p className="text-foreground font-light leading-relaxed">
                 si l'entreprise est une machine, je dessine la machine, les flux, les interfaces, les règles, les leviers, puis je garantis que tout fonctionne ensemble.
               </p>
               <p className="text-muted-foreground font-light leading-relaxed">
