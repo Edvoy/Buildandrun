@@ -22,7 +22,7 @@ const Header = () => {
           <img 
             src={logoHeader} 
             alt="Build&Run Logo" 
-            className="h-8 w-auto invert"
+            className="h-8 w-auto"
           />
           <div className="flex flex-col">
             <span className="text-background text-sm font-light tracking-wide">build&run</span>
