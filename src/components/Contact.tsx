@@ -46,7 +46,7 @@ const Contact = () => {
               <span className="text-muted-foreground">votre organisation ?</span>
             </h2>
 
-            <p className="text-muted-foreground font-light leading-relaxed mb-12 max-w-md">
+            <p className="text-foreground font-light leading-relaxed mb-12 max-w-md">
               commencez par un diagnostic d'architecture pour identifier ce qui bloque vraiment votre business et définir les priorités des 90 prochains jours.
             </p>
 
