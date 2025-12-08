@@ -35,7 +35,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-muted-foreground text-lg md:text-xl max-w-xl font-light leading-relaxed"
+          className="text-foreground text-lg md:text-xl max-w-xl font-light leading-relaxed"
         >
           j'aligne stratégie, opérations, données et organisation en un système cohérent, lisible et scalable.
         </motion.p>
