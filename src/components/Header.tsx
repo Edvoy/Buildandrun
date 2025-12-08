@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoHeader from "@/assets/logo-header.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,9 +18,16 @@ const Header = () => {
     <header className="relative z-50 bg-foreground">
       <div className="px-6 md:px-12 lg:px-20 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#accueil" className="flex flex-col">
-          <span className="text-background text-sm font-light tracking-wide">build&run</span>
-          <span className="text-background/60 text-xs mono">business architecture</span>
+        <a href="#accueil" className="flex items-center gap-3">
+          <img 
+            src={logoHeader} 
+            alt="Build&Run Logo" 
+            className="h-8 w-auto invert"
+          />
+          <div className="flex flex-col">
+            <span className="text-background text-sm font-light tracking-wide">build&run</span>
+            <span className="text-background/60 text-xs mono">business architecture</span>
+          </div>
         </a>
 
         {/* Desktop Navigation */}
