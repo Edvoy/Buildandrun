@@ -103,7 +103,7 @@ const Services = () => {
 
                 {/* Description - Hidden on mobile, shown on hover area */}
                 <div className="col-span-12 md:col-span-4 mt-6 md:mt-0">
-                  <p className="text-muted-foreground text-sm font-light leading-relaxed mb-4">
+                  <p className="text-foreground text-sm font-light leading-relaxed mb-4">
                     {service.description}
                   </p>
                   <ul className="space-y-1">
