@@ -38,7 +38,7 @@ const About = () => {
               <p className="text-foreground font-light leading-relaxed">
                 si l'entreprise est une machine, je dessine la machine, les flux, les interfaces, les règles, les leviers, puis je garantis que tout fonctionne ensemble.
               </p>
-              <p className="text-muted-foreground font-light leading-relaxed">
+              <p className="text-foreground font-light leading-relaxed">
                 mon rôle n'est pas cosmétique. il est structurel. je navigue sur toute la chaîne, du haut au bas, mais je ne fais pas le travail des équipes. je conçois et je cadre.
               </p>
             </div>
