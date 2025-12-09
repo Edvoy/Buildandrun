@@ -45,7 +45,7 @@ const About = () => {
 
             <div className="flex gap-6">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/edouardvoyer/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group"
