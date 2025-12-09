@@ -58,10 +58,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="mailto:contact@buildandrun.com"
+                    href="#contact"
                     className="text-muted-foreground hover:text-foreground transition-colors font-light"
                   >
-                    contact@buildandrun.com
+                    email
                   </a>
                 </li>
               </ul>
