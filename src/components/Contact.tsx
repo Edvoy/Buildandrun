@@ -19,14 +19,28 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const myForm = e.target as HTMLFormElement;
+    const formData = new FormData(myForm);
 
-    toast.success("message envoyé avec succès", {
-      description: "je vous répondrai dans les plus brefs délais.",
-    });
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString()
+      });
 
-    setFormData({ name: "", email: "", company: "", message: "" });
-    setIsSubmitting(false);
+      toast.success("message envoyé avec succès", {
+        description: "je vous répondrai dans les plus brefs délais.",
+      });
+
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error) {
+      toast.error("erreur lors de l'envoi", {
+        description: "veuillez réessayer plus tard.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -72,7 +86,14 @@ const Contact = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="contact" />
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label
@@ -84,6 +105,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -103,6 +125,7 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
@@ -124,6 +147,7 @@ const Contact = () => {
                 <input
                   type="text"
                   id="company"
+                  name="company"
                   value={formData.company}
                   onChange={(e) =>
                     setFormData({ ...formData, company: e.target.value })
@@ -142,6 +166,7 @@ const Contact = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   value={formData.message}
                   onChange={(e) =>
                     setFormData({ ...formData, message: e.target.value })
